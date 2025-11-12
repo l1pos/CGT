@@ -1,4 +1,4 @@
-import background from "../assets/bg.jpg";
+import background from "../assets/backgrounds/bg.jpg";
 
 export default function Hero() {
   return (
@@ -22,6 +22,8 @@ export default function Hero() {
           Ukrainian Military Apparel — Built for Heroes
         </p>
       </div>
+      {/* === Extra dark bottom layer === */}
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/100 via-black/10 to-transparent pointer-events-none"></div>
     </section>
   );
 }
