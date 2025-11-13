@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import ProductModal from "../components/ProductModal";
+
 import longSleeve from "../assets/products/cgt-long-sleeve-olive.png";
 import tshirt from "../assets/products/cgt-tshirt-brown.png";
 import hoodie from "../assets/products/cgt-hoodie-green.png";
@@ -21,6 +23,8 @@ export const products = [
 
 export default function Catalog() {
   const [page, setPage] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const itemsPerPage = 6;
   const start = (page - 1) * itemsPerPage;
   const visibleProducts = products.slice(start, start + itemsPerPage);
@@ -28,13 +32,14 @@ export default function Catalog() {
   return (
     <section className="relative w-full min-h-[110vh] py-16 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-14 px-6">
-        {/* --- LEFT SIDE: IMAGE --- */}
+        {/* LEFT IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="relative w-full lg:w-[45%] overflow-hidden rounded-3xl shadow-[0_0_60px_rgba(0,255,255,0.15)] translate-x-[-30px]"
+          className="relative w-full lg:w-[45%] overflow-hidden rounded-3xl 
+          shadow-[0_0_60px_rgba(0,255,255,0.15)] translate-x-[-30px]"
         >
           <img
             src={soldier}
@@ -49,17 +54,20 @@ export default function Catalog() {
           </div>
         </motion.div>
 
-        {/* --- RIGHT SIDE: PRODUCTS --- */}
+        {/* PRODUCTS */}
         <div className="w-full lg:w-[55%] flex flex-col items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
             {visibleProducts.map((product, index) => (
               <motion.div
                 key={product.id}
+                onClick={() => setSelectedProduct(product)}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-[#0a0a0a]/80 backdrop-blur-md border border-[#00E0FF]/20 rounded-2xl p-5 flex flex-col items-center justify-between transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.4)] hover:-translate-y-2"
+                className="group cursor-pointer relative bg-[#0a0a0a]/80 backdrop-blur-md 
+                border border-[#00E0FF]/20 rounded-2xl p-5 flex flex-col items-center 
+                justify-between transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.4)] hover:-translate-y-2"
               >
                 <img
                   src={product.image}
@@ -76,14 +84,15 @@ export default function Catalog() {
             ))}
           </div>
 
-          {/* === Pagination Buttons === */}
+          {/* Pagination */}
           <div className="flex items-center gap-6 mt-10">
             {page > 1 && (
               <motion.button
                 onClick={() => setPage(page - 1)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border border-[#00E0FF]/50 text-[#00E0FF] font-[Orbitron] uppercase tracking-widest rounded-full hover:bg-[#00E0FF]/10 transition-all duration-300"
+                className="px-8 py-3 border border-[#00E0FF]/50 text-[#00E0FF] font-[Orbitron] uppercase 
+                tracking-widest rounded-full hover:bg-[#00E0FF]/10 transition-all duration-300"
               >
                 ← Previous
               </motion.button>
@@ -94,7 +103,8 @@ export default function Catalog() {
                 onClick={() => setPage(page + 1)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border border-[#00E0FF]/50 text-[#00E0FF] font-[Orbitron] uppercase tracking-widest rounded-full hover:bg-[#00E0FF]/10 transition-all duration-300"
+                className="px-8 py-3 border border-[#00E0FF]/50 text-[#00E0FF] font-[Orbitron] uppercase 
+                tracking-widest rounded-full hover:bg-[#00E0FF]/10 transition-all duration-300"
               >
                 Next →
               </motion.button>
@@ -102,6 +112,12 @@ export default function Catalog() {
           </div>
         </div>
       </div>
+
+      {/* MODAL WINDOW */}
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </section>
   );
 }
