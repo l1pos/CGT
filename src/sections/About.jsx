@@ -1,42 +1,34 @@
 import { motion } from "framer-motion";
-import aboutImg from "../assets/about.jpg"; // сюда вставишь своё фото
+import aboutImg from "../assets/about.jpg";
 
 export default function About() {
   return (
     <section className="w-full py-20 bg-black text-white">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-        {/* TEXT */}
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold mb-6 tracking-wide">ABOUT US</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-wide">
+            ABOUT US
+          </h2>
 
-          <p className="text-gray-300 leading-relaxed mb-4">
-            CGT was founded in 2018 by Ukrainian soldiers from the same unit.
-            What started as an idea grew into a mission — to raise the prestige
-            of the Ukrainian Armed Forces and bring new people with fresh vision
-            and strong values into our military community.
+          <p className="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+            CGT was founded in 2018 by Ukrainian soldiers from the same unit...
           </p>
 
-          <p className="text-gray-300 leading-relaxed mb-4">
-            All profits from our merch go directly toward supporting
-            professional Ukrainian fighters on the frontlines — the CGT family.
-            Over the years, one small group has grown into several fully
-            operational units that require constant support and reliable gear to
-            complete their tasks.
+          <p className="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
+            All profits from our merch go directly toward supporting fighters...
           </p>
 
-          <p className="text-gray-300 leading-relaxed">
-            Even if you are not a service member, wearing CGT means sharing our
-            values: to be a worthy Ukrainian, a professional in your craft, and
-            someone who helps our army move closer to victory.
+          <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+            Even if you're not a service member, wearing CGT means sharing our
+            values.
           </p>
         </motion.div>
 
-        {/* IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}

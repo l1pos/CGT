@@ -8,10 +8,22 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Catalog />
-      <About />
-      <Footer />
+
+      <section id="home">
+        <Hero />
+      </section>
+
+      <section id="catalog">
+        <Catalog />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="contacts">
+        <Footer />
+      </section>
     </>
   );
 }
