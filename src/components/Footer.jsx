@@ -1,16 +1,22 @@
+import Logo from "../assets/CGT-logo.png";
+
 export default function Footer() {
   return (
     <footer className="w-full py-10 bg-black/80 backdrop-blur-md border-t border-[#00E0FF]/10">
       <div
         className="max-w-6xl mx-auto px-6 
-      flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 font-[Orbitron] tracking-widest text-sm"
+        flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 font-[Orbitron] tracking-widest text-sm"
       >
         <div className="flex items-center gap-3 select-none">
+<<<<<<< HEAD
           <img
             src="../assets/CGT-logo.png"
             alt="CGT Logo"
             className="w-10 h-10 object-contain"
           />
+=======
+          <img src={Logo} alt="CGT Logo" className="w-10 h-10 object-contain" />
+>>>>>>> a71123c (fix logo footer)
           <p className="text-white uppercase">Company Group Team</p>
         </div>
 
