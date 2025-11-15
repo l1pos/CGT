@@ -63,11 +63,6 @@ export default function Navbar() {
               <a href="#about">About Us</a>
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00E0FF] transition-all duration-300 group-hover:w-full"></span>
             </li>
-
-            <li className="relative cursor-pointer group hover:text-[#00E0FF] transition-all">
-              <a href="#contacts">Contacts</a>
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#00E0FF] transition-all duration-300 group-hover:w-full"></span>
-            </li>
           </ul>
         </div>
       </div>
