@@ -8,15 +8,7 @@ export default function Footer() {
         flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 font-[Orbitron] tracking-widest text-sm"
       >
         <div className="flex items-center gap-3 select-none">
-<<<<<<< HEAD
-          <img
-            src="../assets/CGT-logo.png"
-            alt="CGT Logo"
-            className="w-10 h-10 object-contain"
-          />
-=======
           <img src={Logo} alt="CGT Logo" className="w-10 h-10 object-contain" />
->>>>>>> a71123c (fix logo footer)
           <p className="text-white uppercase">Company Group Team</p>
         </div>
 
