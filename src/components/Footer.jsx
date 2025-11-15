@@ -7,7 +7,7 @@ export default function Footer() {
       >
         <div className="flex items-center gap-3 select-none">
           <img
-            src="/src/assets/CGT-logo.png"
+            src="../assets/CGT-logo.png"
             alt="CGT Logo"
             className="w-10 h-10 object-contain"
           />
